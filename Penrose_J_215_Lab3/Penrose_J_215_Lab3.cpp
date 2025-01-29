@@ -35,6 +35,7 @@ void fourthChoice(float A, float B) {
 	cout << "You chose Divison, I will divide the first value by the second." << endl;
 	cout << A << "/" << B << "=" << (A / B) << endl;
 }
+// This covers a case elp cover a case where "choice" was not 1,2,3 or 4. 
 void noChoice() {
 	cout << "It seems what you entered was not one of the four choices. Next time simply type the number next to the oporation you wish to do." << endl;
 	cout << "Example: 1 is for Addition." << endl;
@@ -57,9 +58,13 @@ int main() {
 	if (choice == 4) {
 		fourthChoice(A, B);
 	}
-	else {
+	if (choice < 1) {
 		noChoice();
 	}
+	if (choice > 4) {
+		noChoice();
+	}
+	
 	return 0;
 }
 
